@@ -4,8 +4,6 @@ public class Pilha {
 
     private NoPilha refNoEntradaPilha;
 
-    public Pilha() {}
-
     public Pilha() {
         this.refNoEntradaPilha = null;
     }
@@ -35,5 +33,24 @@ public class Pilha {
     // Verifica se a pilha está vazia e retorna true se estiver
     public boolean isEmpty(){
         return refNoEntradaPilha == null;
+    }
+
+    @Override
+    public String toString() {
+        String stringRetorno = "---------------\n";
+        stringRetorno += "     Pilha\n";
+        stringRetorno += "---------------\n";
+        NoPilha noAuxiliar = refNoEntradaPilha;
+
+        while(true){
+            if(noAuxiliar != null){ // Se a Pilha estiver com a ref de entrada nula, sai do loop com o break
+                stringRetorno += "[No{dado=" + noAuxiliar.getDado() + "}]\n"; // Pegamos o nó do topo da pilha
+                noAuxiliar = noAuxiliar.getReferenciaNo(); // A referência do nó auxiliar passa para o nó abaixo dele
+            }else{ // Se a Pilha estiver com a ref de entrada nula, sai do loop com o break
+                break;
+            }
+        }
+        stringRetorno += "===============\n";
+        return stringRetorno;
     }
 }
