@@ -7,6 +7,7 @@ public class Main {
 
     public static void main(String[] args) {
 
+        // Quando a likedList implementa a interface Queue, temos uma implementação de fila em Java.
         Queue<Carro> queueCarros = new LinkedList<>();
 
         queueCarros.add(new Carro("Ford"));
